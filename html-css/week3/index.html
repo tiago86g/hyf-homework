@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Homework week 3 Form</title>
+</head>
+
+<body>
+    <nav> <!-- menu -->
+        <a href="#">LOGO</a>
+        <div>
+            <a href="#">about</a>
+            <a href="#">contact</a>
+        </div>
+    </nav>
+
+    <form id="form1" method="post" action="success.html">
+        <div class="pc-tab">
+            <input checked="checked" id="tab1" type="radio" name="pct" />
+            <input id="tab2" type="radio" name="pct" />
+            <input id="tab3" type="radio" name="pct" />
+            <input id="tab4" type="radio" name="pct" />
+            <div class="progressbar">just few steps</div>
+            <section>
+                <div class="tab1">  <!-- Page 1 -->
+                    <h2>Sign up</h2>
+                    <p>We can't wait to help you...</p>
+                    <p>Sign up below to seve up to 70% on appare, handbags and cosmetics. Our agents are busy picking the best offers that match your preferences and style...</p>
+                    <p class="steps">step 1/4 - tell us who you are</p>
+
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <label class="input-required" for="firstname">FIRST NAME*</label>
+                            <input type="text"  id="firstname" name="firstname" required>
+                        </div>  
+
+                        <div class="itens half-col">
+                            <label class="input-required" for="lastname">LAST NAME*</label>
+                            <input type="text" id="lastname" name="lastname" required>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens">
+                            <label for="country">COUNTRY*</label>
+                            <select class="input-required" id="country" name="country" required>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <label for="street">STREET ADDRESS*</label>
+                            <input type="text" class="input-required" id="street" name="street" required>
+                        </div>
+
+                        <div class="itens half-col">
+                            <label for="postcode">POST CODE*</label>
+                            <input type="number" class="input-required" id="postcode" name="postcode" min="4" max="4" required>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <p>Use the same address</p>
+                            <label for="toogle-1">SHIPPING ADDRESS</label> 
+                            <input type="checkbox" id="toggle-1" checked="checked">
+                        </div>
+                    </div>
+
+                    <div id="shipping">
+                        <div class="inputs">
+                            <div class="itens half-col">
+                                <label class="input-required" for="firstname">FIRST NAME*</label>
+                                <input type="text"  id="firstname" name="firstname">
+                            </div>  
+
+                            <div class="itens half-col">
+                                <label class="input-required" for="lastname">LAST NAME*</label>
+                                <input type="text" id="lastname" name="lastname">
+                            </div>
+                        </div>
+
+                        <div class="inputs">
+                            <div class="itens">
+                                <label for="country">COUNTRY*</label>
+                                <select class="input-required" id="country" name="country" >
+                                    <option value="Brasil">Brasil</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="inputs">
+                            <div class="itens half-col">
+                                <label for="street">STREET ADDRESS*</label>
+                                <input type="text" class="input-required" id="street" name="street" >
+                            </div>
+
+                            <div class="itens half-col">
+                                <label for="postcode">POST CODE*</label>
+                                <input type="number" class="input-required" id="postcode" name="postcode" max="4" min="4">
+                            </div>
+                        </div>
+                    </div>
+
+                                    
+                    <label for="tab2" id="label2" class="navigation">NEXT</label>
+                </div>
+
+                <div class="tab2">  <!-- Page 2 -->
+                    <h2>Sign up</h2>
+                    <p class="steps">step 2/4 - how can we reach you</p>
+                    
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <label for="email">E-MAIL*</label>
+                            <input type="email" class="input-required" id="email" name="email" required>
+                        </div>
+    
+                        <div class="itens half-col">
+                            <label for="phone">PHONE*</label>
+                            <input type="tel" class="input-required" id="phone" name="phone">
+                        </div>
+                    </div> 
+
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <label for="password">PASSWORD*</label>
+                            <input type="password" class="input-required" id="password" name="password" required >
+                        </div>
+                        <div class="itens half-col">
+                            <label for="re-enter-password">RE-ENTER PASSWORD</label>
+                            <input type="password" class="input-required" id="re-enter-password" name="re-enter-password" required>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div>
+                            <p>I whant to sing up for newslatter</p>
+                        </div>
+                        <div class="itens half-col">
+                            <label for="toogle-2">weekly</label>
+                            <input type="radio" name="newsletter" value="weekly" class="checkbox" checked>
+                        </div>
+
+                        <div class="itens half-col">   
+                            <label for="toogle-3">monthly</label>
+                            <input type="radio" name="newsletter" value="monthly"> 
+                        </div>
+
+                        <div class="itens half-col">    
+                            <label for="toogle-4">Don't send me news</label>
+                            <input type="radio" name="newsletter" value="dontsendme">
+                        </div>
+                    </div>
+                   
+                    <label for="tab1" class="navigation">BACK</label>
+                    <label for="tab3" id="label3" class="navigation">NEXT</label>
+                </div>
+
+                <div class="tab3"> <!-- Page 3 -->
+                    <h2>Sign up</h2>
+                    <p class="steps">step 3/4 - time to learn about your preferences</p>
+
+                    <div class="inputs">
+                        <div class="itens half-col">    
+                            <label for="toogle-5">Apparal</label>
+                            <input type="checkbox" id="toogle-5" class="checkbox">
+                        </div>
+
+                        <div class="itens half-col">    
+                            <label for="toogle-6">Accessories</label>
+                            <input type="checkbox" id="toogle-6" class="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens half-col">    
+                            <label for="toogle-7">Handbags</label>
+                            <input type="checkbox" id="toogle-7" class="checkbox">
+                        </div>
+
+                        <div class="itens half-col">    
+                            <label for="toogle-8">Jewelry</label>
+                            <input type="checkbox" id="toogle-8" class="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens half-col">    
+                            <label for="toogle-9">Shoes</label>
+                            <input type="checkbox" id="toogle-9" class="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <p>Choose the images that best resemble your style</p>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens half-col">  
+                            <label for="toogle-10">
+                                <img src="image/style.png" alt="style 1" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-10">
+ 
+                            <label for="toogle-11">
+                                <img src="image/style.png" alt="style 2" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-11">
+                        </div>
+
+                        <div class="itens half-col">  
+                            <label for="toogle-12">
+                                <img src="image/style.png" alt="style 3" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-12">
+
+                            <label for="toogle-13">
+                                <img src="image/style.png" alt="style 4" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-13">
+                        </div>
+                    </div>
+                
+                    <label for="tab2" class="navigation">BACK</label>
+                    <label for="tab4" id="label4" class="navigation">NEXT</label>
+                </div>
+
+                <div class="tab4"> <!-- Page 4 -->
+                    <h2>Sign up</h2>
+                    <p class="steps">step 4/4 - payment</p>
+
+                    <div class="inputs">
+                        <p>Pleas fill in with your payment data</p>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens">
+                            <label for="nameoncard">Name on card</label>
+                            <input type="text" name="nameoncard" id="nameoncard" required>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens">
+                            <label for="cardtype">Card type</label>
+                            <select name="cardtype" id="cardtype" >
+                                <option value="dankort">Dankort</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="other">Other card</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <label for="credtcardnumber">Credt card number</label>
+                            <input type="number" name="credtcardnumber" id="credtcardnumber" min="16" max="16" required>
+                        </div>
+
+                        <div class="itens half-col">
+                            <label for="firstname2">First name</label>
+                            <input type="text" name="firstname2" id="firstname2" required>
+                        </div>
+                    </div>
+
+                    <div class="inputs">
+                        <div class="itens half-col">
+                            <label for="expirymonth">Expiry month</label>
+                            <input type="number" name="expirymonth" id="expirymonth" placeholder="mm" mim="2" max="2" required>
+                        </div>
+
+                        <div class="itens half-col">
+                            <label for="expiryyear">Expiry year</label>
+                            <input type="number" name="expiryyear" id="expiryyear" placeholder="yyyy" min="4" max="4" required>
+                        </div>
+                            
+                        <div class="itens half-col">
+                            <label for="ccv">CCV</label>
+                            <input type="numbers" name="ccv" id="ccv" min="3" max="3" required>
+                        </div>
+                    </div>
+                
+                    <label for="tab3" class="navigation">BACK</label>
+                    <input type="submit" id="submit">
+                </div>
+            </section>
+        </div>
+    </form>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
