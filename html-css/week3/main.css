@@ -30,27 +30,36 @@ body {
     padding: 0;
     display: flex;
 }
-.pc-tab label.navigation {
-    display: inline-flex;
-    justify-content: space-between;
-    padding: 15px;
+label.navigation, .navigation {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 0;
     border-bottom: 0;
     cursor : pointer;
     background: rgb(15, 98, 242);
-    width: 25%;
-    margin: 0 auto;
+    margin: 10px 2%;
     text-align: center;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.nav1{
+    display: flex;
 }
 
 .btn{
-    text-align: center;
+    background-color: #04eb2b;
+    color: black;
 }
+
+
 /** bottom navegation **/
 #tab1:checked ~ nav .tab1 label,
 #tab2:checked ~ nav .tab2 label ,
 #tab3:checked ~ nav .tab3 label , 
 #tab4:checked ~ nav .tab4 label {
-    background: #fff;
+    background: rgb(0, 135, 254);
     position: relative;
 }
 #tab1:checked ~ nav .tab1 label:after,
@@ -66,11 +75,6 @@ body {
     left: 0;
     bottom: -1px;
 }
-button {
-    background: rgb(6, 0, 128);
-    border: 1px solid #000;
-    border-radius: 2px;
-} /** button send **/
 
 @media only screen and (max-width: 600px) {
     .pc-tab ul {
@@ -94,10 +98,12 @@ body{
     margin: 0;
     -webkit-font-smoothing: antialiased;
     font-family: "lato", sans-serif;
-    background: rgb(4, 198, 201);
+    background: rgb(221, 221, 221);
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;}
+    max-width: 700px;
+    border: 3px transparent;
+}
 
 /** Nav **/
 nav{
@@ -109,23 +115,39 @@ nav div{
     justify-content: flex-end;
 }
 nav div a{
-    padding: 10px 20px;
+    padding-left: 20px;
 }
 nav a{
-    padding: 10px 20px; 
+    padding: 10px 0px; 
     text-decoration:none;
     color: #e74c3c;
 }
 
 /** Forms **/
 section div {
-    padding: 10px;
+    padding: 0px;
     width: 100%;
     /* border: 1px solid #ddd; */
 }
 section div h2 {
     margin: 0;
     margin: 30px auto;
+}
+
+.half-col{
+    width: 49%;
+}
+
+.third-col{
+    width: 32%;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-between;
+}
+.itens{
+    flex: 1;
 }
 label{
     font-size: .7em;
@@ -138,21 +160,22 @@ input, select, textarea{
     cursor: default;
     margin: 1em 0em;
     font: 400 0.9em system-ui;
-    border-radius: 5px;
+    border-radius: 10px;
     /* border: 1px solid rgb(203, 203, 203); */
 }
-.inputs{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-.itens{
-    width: 100%
-}
+
 textarea{
     height: 12em;
 }
 
+.textarea{
+    margin-top: 1.1em;
+}
+
+label .shipping{
+    margin: 1em 0em;
+    width: auto;
+}
 
 input[type=checkbox]:checked ~ .first {
     display:none;
@@ -162,8 +185,9 @@ input[type=checkbox]:checked ~ .first {
     display: inline;
 }
 
-.image{
-    max-width: 200px;
+img{
+    max-width: 90%;
+    margin-top: 20px;
 }
 
 .progressbar{
@@ -174,6 +198,7 @@ input[type=checkbox]:checked ~ .first {
     transition: width .25s linear;
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
     
 }
 
@@ -202,11 +227,7 @@ font-size: 1em;
 font-weight: 600;
 }
 
-}
-#toggle-1:checked ~ #shipping{
-    display: initial;
+#toogle-10: checked ~ .desapear{
+    display: none;
 }
 
-#toggle-1:not(:checked) ~ #shipping{
-    display: none; 
-}

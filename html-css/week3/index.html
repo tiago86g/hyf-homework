@@ -24,7 +24,7 @@
             <input id="tab2" type="radio" name="pct" />
             <input id="tab3" type="radio" name="pct" />
             <input id="tab4" type="radio" name="pct" />
-            <div class="progressbar">just few steps</div>
+            <div class="progressbar">progress</div>
             <section>
                 <div class="tab1">  <!-- Page 1 -->
                     <h2>Sign up</h2>
@@ -33,14 +33,14 @@
                     <p class="steps">step 1/4 - tell us who you are</p>
 
                     <div class="inputs">
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label class="input-required" for="firstname">FIRST NAME*</label>
-                            <input type="text"  id="firstname" name="firstname" required>
+                            <input type="text"  id="firstname" name="firstname" required placeholder="Type your first name">
                         </div>  
 
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label class="input-required" for="lastname">LAST NAME*</label>
-                            <input type="text" id="lastname" name="lastname" required>
+                            <input type="text" id="lastname" name="lastname" required required placeholder="Type your last name">
                         </div>
                     </div>
 
@@ -56,66 +56,71 @@
                     </div>
 
                     <div class="inputs">
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="street">STREET ADDRESS*</label>
-                            <input type="text" class="input-required" id="street" name="street" required>
+                            <input type="text" class="input-required" id="street" name="street" required placeholder="Type your street address">
                         </div>
 
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="postcode">POST CODE*</label>
-                            <input type="number" class="input-required" id="postcode" name="postcode" min="4" max="4" required>
+                            <input type="number" class="input-required" id="postcode" name="postcode" max="4" required placeholder="XXXX">
                         </div>
                     </div>
 
-
-                    
                     <div class="inputs">
-                        <div class="itens half-col">
-                            <p>Use the same address</p>
-                            <label for="toogle-1">SHIPPING ADDRESS</label> 
-                            <input type="checkbox" id="toggle-1" checked="checked">
-                        </div>
+                        <label for="description" class="textarea">PROFILE DESCRIPTION*</label>
+                        <textarea type="text" class="input-required" id="description" name="description" placeholder="Please provide a short description of your self (max. 500 caracters)"  maxlength="500"></textarea>
                     </div>
 
-                    <div id="shipping">
-                        <div class="inputs">
-                            <div class="itens half-col">
-                                <label class="input-required" for="firstname">FIRST NAME*</label>
-                                <input type="text"  id="firstname" name="firstname">
-                            </div>  
+                    <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
 
+                    <div class="inputs">
                             <div class="itens half-col">
-                                <label class="input-required" for="lastname">LAST NAME*</label>
-                                <input type="text" id="lastname" name="lastname">
+                                <input type="checkbox" id="toogle-10" checked="checked">
+                                <label for="toogle-10" class="shipping">SHIPPING ADDRESS</label>   
                             </div>
-                        </div>
-
-                        <div class="inputs">
-                            <div class="itens">
-                                <label for="country">COUNTRY*</label>
-                                <select class="input-required" id="country" name="country" >
-                                    <option value="Brasil">Brasil</option>
-                                    <option value="Denmark">Denmark</option>
-                                    <option value="Outro">Outro</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="inputs">
-                            <div class="itens half-col">
-                                <label for="street">STREET ADDRESS*</label>
-                                <input type="text" class="input-required" id="street" name="street" >
-                            </div>
-
-                            <div class="itens half-col">
-                                <label for="postcode">POST CODE*</label>
-                                <input type="number" class="input-required" id="postcode" name="postcode" max="4" min="4">
-                            </div>
-                        </div>
                     </div>
 
-                                    
-                    <label for="tab2" id="label2" class="navigation">NEXT</label>
+                    <div class="desapear">
+                            <div class="inputs">
+                                <div class="half-col">
+                                    <label class="input-required" for="firstname">FIRST NAME*</label>
+                                    <input type="text"  id="firstname2" name="firstname" placeholder="Type your first name">
+                                </div>  
+
+                                <div class="half-col">
+                                    <label class="input-required" for="lastname">LAST NAME*</label>
+                                    <input type="text" id="lastname2" name="lastname" placeholder="Type your last name">
+                                </div>
+                            </div>
+
+                            <div class="inputs">
+                                <div class="itens">
+                                    <label for="country">COUNTRY*</label>
+                                    <select class="input-required" id="country2" name="country" >
+                                        <option value="Brasil">Brasil</option>
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="inputs">
+                                <div class="half-col">
+                                    <label for="street">STREET ADDRESS*</label>
+                                    <input type="text" class="input-required" id="street2" name="street" placeholder="Type your street address">
+                                </div>
+
+                                <div class="half-col">
+                                    <label for="postcode">POST CODE*</label>
+                                    <input type="number" class="input-required" id="postcode2" name="postcode" max="4"placeholder="XXXX">
+                                </div>
+                            </div>
+                    </div> <!-- desapear -->
+
+                    <div class="nav1">               
+                        <label for="tab2" id="label2" class="navigation">NEXT</label>
+                    </div> 
                 </div>
 
                 <div class="tab2">  <!-- Page 2 -->
@@ -123,23 +128,22 @@
                     <p class="steps">step 2/4 - how can we reach you</p>
                     
                     <div class="inputs">
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="email">E-MAIL*</label>
-                            <input type="email" class="input-required" id="email" name="email" required>
+                            <input type="email" class="input-required" id="email" name="email" required placeholder="Type your e-mail">
                         </div>
-    
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="phone">PHONE*</label>
-                            <input type="tel" class="input-required" id="phone" name="phone">
+                            <input type="tel" class="input-required" id="phone" name="phone" placeholder="12 34 12 34">
                         </div>
                     </div> 
 
                     <div class="inputs">
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="password">PASSWORD*</label>
                             <input type="password" class="input-required" id="password" name="password" required >
                         </div>
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="re-enter-password">RE-ENTER PASSWORD</label>
                             <input type="password" class="input-required" id="re-enter-password" name="re-enter-password" required>
                         </div>
@@ -149,24 +153,26 @@
                         <div>
                             <p>I whant to sing up for newslatter</p>
                         </div>
-                        <div class="itens half-col">
-                            <label for="toogle-2">weekly</label>
-                            <input type="radio" name="newsletter" value="weekly" class="checkbox" checked>
+                        <div class="half-col">
+                            <label for="toogle-20">weekly</label>
+                            <input type="radio" id="toogle-20" name="newsletter" value="weekly" checked>
                         </div>
 
-                        <div class="itens half-col">   
-                            <label for="toogle-3">monthly</label>
-                            <input type="radio" name="newsletter" value="monthly"> 
+                        <div class="half-col">   
+                            <label for="toogle-30">monthly</label>
+                            <input type="radio"  id="toogle-30" name="newsletter" value="monthly"> 
                         </div>
 
-                        <div class="itens half-col">    
-                            <label for="toogle-4">Don't send me news</label>
-                            <input type="radio" name="newsletter" value="dontsendme">
+                        <div class="half-col">    
+                            <label for="toogle-40">Don't send me news</label>
+                            <input type="radio" id="toogle-40" name="newsletter" value="dontsendme">
                         </div>
                     </div>
-                   
-                    <label for="tab1" class="navigation">BACK</label>
-                    <label for="tab3" id="label3" class="navigation">NEXT</label>
+                    <div class="nav1">
+                        <label for="tab1" class="navigation">BACK</label>
+                        <label for="tab3" id="label3" class="navigation">NEXT</label>  
+                    </div>
+                    
                 </div>
 
                 <div class="tab3"> <!-- Page 3 -->
@@ -174,33 +180,33 @@
                     <p class="steps">step 3/4 - time to learn about your preferences</p>
 
                     <div class="inputs">
-                        <div class="itens half-col">    
-                            <label for="toogle-5">Apparal</label>
-                            <input type="checkbox" id="toogle-5" class="checkbox">
+                        <div class="half-col">    
+                            <label for="toogle-50">Apparal</label>
+                            <input type="checkbox" id="toogle-50" class="checkbox">
                         </div>
 
-                        <div class="itens half-col">    
-                            <label for="toogle-6">Accessories</label>
-                            <input type="checkbox" id="toogle-6" class="checkbox">
-                        </div>
-                    </div>
-
-                    <div class="inputs">
-                        <div class="itens half-col">    
-                            <label for="toogle-7">Handbags</label>
-                            <input type="checkbox" id="toogle-7" class="checkbox">
-                        </div>
-
-                        <div class="itens half-col">    
-                            <label for="toogle-8">Jewelry</label>
-                            <input type="checkbox" id="toogle-8" class="checkbox">
+                        <div class="half-col">    
+                            <label for="toogle-60">Accessories</label>
+                            <input type="checkbox" id="toogle-60" class="checkbox">
                         </div>
                     </div>
 
                     <div class="inputs">
-                        <div class="itens half-col">    
-                            <label for="toogle-9">Shoes</label>
-                            <input type="checkbox" id="toogle-9" class="checkbox">
+                        <div class="half-col">    
+                            <label for="toogle-70">Handbags</label>
+                            <input type="checkbox" id="toogle-70" class="checkbox">
+                        </div>
+
+                        <div class="half-col">    
+                            <label for="toogle-80">Jewelry</label>
+                            <input type="checkbox" id="toogle-80" class="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="ihalf-col">
+                        <div class="itens">    
+                            <label for="toogle-90">Shoes</label>
+                            <input type="checkbox" id="toogle-90" class="checkbox">
                         </div>
                     </div>
 
@@ -209,33 +215,59 @@
                     </div>
 
                     <div class="inputs">
-                        <div class="itens half-col">  
-                            <label for="toogle-10">
+                        <div class="itens">  
+                            <label for="toogle-100">
                                 <img src="image/style.png" alt="style 1" class="image">
                             </label>
-                            <input type="checkbox" id="toogle-10">
+                            <input type="checkbox" id="toogle-100">
  
-                            <label for="toogle-11">
+                            <label for="toogle-110">
                                 <img src="image/style.png" alt="style 2" class="image">
                             </label>
-                            <input type="checkbox" id="toogle-11">
+                            <input type="checkbox" id="toogle-110">
                         </div>
 
-                        <div class="itens half-col">  
-                            <label for="toogle-12">
+                        <div class="itens">  
+                            <label for="toogle-120">
                                 <img src="image/style.png" alt="style 3" class="image">
                             </label>
-                            <input type="checkbox" id="toogle-12">
+                            <input type="checkbox" id="toogle-120">
 
-                            <label for="toogle-13">
+                            <label for="toogle-130">
                                 <img src="image/style.png" alt="style 4" class="image">
                             </label>
-                            <input type="checkbox" id="toogle-13">
+                            <input type="checkbox" id="toogle-130">
                         </div>
+
+                        <div class="itens">  
+                            <label for="toogle-140">
+                                <img src="image/style.png" alt="style 5" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-140">
+ 
+                            <label for="toogle-150">
+                                <img src="image/style.png" alt="style 6" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-150">
+                        </div>
+
+                        <div class="itens">  
+                            <label for="toogle-160">
+                                <img src="image/style.png" alt="style 7" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-160">
+
+                            <label for="toogle-170">
+                                <img src="image/style.png" alt="style 8" class="image">
+                            </label>
+                            <input type="checkbox" id="toogle-170">
+                        </div>
+
                     </div>
-                
-                    <label for="tab2" class="navigation">BACK</label>
-                    <label for="tab4" id="label4" class="navigation">NEXT</label>
+                    <div class="nav1">
+                        <label for="tab2" class="navigation">BACK</label>
+                        <label for="tab4" id="label4" class="navigation">NEXT</label>
+                    </div>
                 </div>
 
                 <div class="tab4"> <!-- Page 4 -->
@@ -247,14 +279,12 @@
                     </div>
 
                     <div class="inputs">
-                        <div class="itens">
+                        <div class="half-col">
                             <label for="nameoncard">Name on card</label>
-                            <input type="text" name="nameoncard" id="nameoncard" required>
+                            <input type="text" name="nameoncard" id="nameoncard" required placeholder="Name on your card">
                         </div>
-                    </div>
 
-                    <div class="inputs">
-                        <div class="itens">
+                        <div class="half-col">
                             <label for="cardtype">Card type</label>
                             <select name="cardtype" id="cardtype" >
                                 <option value="dankort">Dankort</option>
@@ -266,39 +296,41 @@
                     </div>
 
                     <div class="inputs">
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="credtcardnumber">Credt card number</label>
-                            <input type="number" name="credtcardnumber" id="credtcardnumber" max="16" required>
+                            <input type="number" name="credtcardnumber" id="credtcardnumber" minlength="16" maxlength="16" required placeholder="xxxx xxxx xxxx xxxx">
                         </div>
 
-                        <div class="itens half-col">
+                        <div class="half-col">
                             <label for="firstname2">First name</label>
-                            <input type="text" na‡me="firstname2" id="firstname2" required>
+                            <input type="text" name="firstname2" id="firstname2" requiredn placeholder="Write your first name" >
                         </div>
                     </div>
 
                     <div class="inputs">
-                        <div class="itens half-col">
+                        <div class="third-col">
                             <label for="expirymonth">Expiry month</label>
-                            <input type="number" name="expirymonth" id="expirymonth" placeholder="mm" max="2" required>
+                            <input type="number" name="expirymonth" id="expirymonth" placeholder="mm" minlength="2" maxlength="2" required placeholder="XX">
                         </div>
 
-                        <div class="itens half-col">
+                        <div class="third-col">
                             <label for="expiryyear">Expiry year</label>
-                            <input type="number" name="expiryyear" id="expiryyear" placeholder="yyyy" max="4" required>
+                            <input type="number" name="expiryyear" id="expiryyear" placeholder="yyyy" minlength="4" maxlength="4" required placeholder="XXXX">
                         </div>
                             
-                        <div class="itens half-col">
+                        <div class="third-col">
                             <label for="ccv">CCV</label>
-                            <input type="numbers" name="ccv" id="ccv" max="3" required>
+                            <input type="number" name="ccv" id="ccv" minlength="3" maxlength="3" required placeholder="XXX">
                         </div>
                     </div>
-                
-                    <label for="tab3" class="navigation">BACK</label>
-                    <input type="submit" id="submit">
+                    <div class="nav1">
+                        <label for="tab3" class="navigation">BACK</label>
+                        <input type="submit" id="submit" class="navigation btn">
+                    </div>
+                    
                 </div>
             </section>
-        </div>
+        </div> <!-- .pc-tab -->
     </form>
     <script src="main.js"></script>
 
