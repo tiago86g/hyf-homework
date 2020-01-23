@@ -1,0 +1,7 @@
+The API random dogs gives you via JSON file a URL to a random picture of a dog.
+
+To print the picture you must use the key "url" providede by the API, that URL changes every time you access the API.
+
+The type of file provided by the API is an JSON object with 2 keys: "fileSizeBytes" and "url".
+
+https://random.dog/woof.json

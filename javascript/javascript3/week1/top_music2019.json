@@ -1,0 +1,36 @@
+[{
+    
+        "id":"Morena",
+        "artist":"Los Hermanos",
+        "album": "4",
+        "track": 1,
+        "player":["Deezer", "Spotify"]
+    },
+    {
+        "id":"Vai",
+        "artist":"Tom Zé",
+        "album": "Studies of Tom Zé: Explaining Things So I Can Confuse You",
+        "track": 2,
+        "player":["Deezer", "YouTube"]
+    },
+    {
+        "id":"Benditas",
+        "artist":"Mart'Nália",
+        "album": "Zoombido - Para Se Fazer uma Canção - Vol. 1",
+        "track": 3,
+        "player":["Deezer", "Spotify", "YouTube"]
+    },
+    {
+        "id":"Aqueous Transmission",
+        "artist":"Incubus",
+        "album": "Morning View",
+        "track": 4,
+        "player":["Deezer"]
+    },
+    {
+        "id":"Shot",
+        "artist":"Pitanga em pé de amora",
+        "album": "Pitanga em pé de amora",
+        "track": 5,
+        "player":["Deezer", "YouTube"]
+}]
