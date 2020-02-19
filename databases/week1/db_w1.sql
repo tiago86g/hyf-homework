@@ -37,7 +37,7 @@ where title is null or due_date is null;
 
 
 -- 8 Get the title and status (as text) of all tasks
-select title, name
+select task.title, status.name as status
 from task join status 
 on status.id = task.status_id;
 
