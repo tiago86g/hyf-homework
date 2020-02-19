@@ -27,7 +27,7 @@ order by created desc;
 select id, created
 from task
 order by created desc
-limit 6;
+limit 1;
 
 
 -- 7 Get the title and due date of all tasks where the title or description contains database
