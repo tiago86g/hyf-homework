@@ -9,32 +9,24 @@ CREATE TABLE `user` (
 
 CREATE TABLE `room` (
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`description` VARCHAR(255) NOT NULL,
-`status_id` INT UNSIGNED NOT NULL ,
-KEY `fk_status` (`status_id`),
-CONSTRAINT `fk_status` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+`description` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- CREATE TABLE `equipment`(
--- `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
--- `equipmentName` VARCHAR(255) NOT NULL,
--- `description` VARCHAR(255) NOT NULL,
--- `startDate` DATETIME  NULL,
--- `endDate`DATETIME  NULL,
--- `status_id` INT UNSIGNED NOT NULL,
--- KEY `fk_status` (`status_id`),
--- CONSTRAINT `fk_status` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `equipment`(
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`equipmentName` VARCHAR(255) NOT NULL,
+`description` VARCHAR(255) NOT NULL,
+`startDate` DATETIME  NULL,
+`endDate`DATETIME  NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `status` (
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL
--- `room_id` INT UNSIGNED NOT NULL, 
--- `equipment_id` INT UNSIGNED NOT NULL, 
--- KEY `fk_room` (`room_id`),
--- KEY `fk_equipment` (`equipment_id`),
--- CONSTRAINT `fk_room` FOREIGN KEY (`room_id`) REFERENCES `room` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
--- CONSTRAINT `fk_equipment` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+`name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+`status_room_id` INT UNSIGNED NOT NULL, 
+`status_equipment_id` INT UNSIGNED NOT NULL, 
+CONSTRAINT `fk_room` FOREIGN KEY (`status_room_id`) REFERENCES `room` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `fk_equipment` FOREIGN KEY (`status_equipment_id`) REFERENCES `equipment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `booked_room` (
@@ -42,21 +34,29 @@ CREATE TABLE `booked_room` (
 `startDate` DATETIME NOT NULL,
 `endDate`DATETIME NOT NULL,
 `room_id` INT UNSIGNED NOT NULL, 
-`user_id` INT UNSIGNED NOT NULL, 
-KEY `fk_room` (`room_id`),
-KEY `fk_user` (`user_id`),
-CONSTRAINT `fk_room` FOREIGN KEY (`room_id`) REFERENCES `room` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+`room_user_id` INT UNSIGNED NOT NULL, 
+CONSTRAINT `fk_status_room_id` FOREIGN KEY (`room_id`) REFERENCES `status` (`status_room_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `fk_user` FOREIGN KEY (`room_user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- CREATE TABLE `booked_equipment` (
--- `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
--- `startDate` DATETIME NOT NULL,
--- `endDate`DATETIME NOT NULL,
--- `equipment_id` INT UNSIGNED NOT NULL, 
--- `user_id` INT UNSIGNED NOT NULL, 
--- KEY `fk_equipment` (`equipment_id`),
--- KEY `fk_user` (`user_id`),
--- CONSTRAINT `fk_equipment` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
--- CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `booked_equipment` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`startDate` DATETIME NOT NULL,
+`endDate`DATETIME NOT NULL,
+`equipment_id` INT UNSIGNED NOT NULL, 
+`equip_user_id` INT UNSIGNED NOT NULL, 
+CONSTRAINT `fk_status_equipment_id` FOREIGN KEY (`equipment_id`) REFERENCES `status` (`status_equipment_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `fk_room_user_id` FOREIGN KEY (`equip_user_id`) REFERENCES `booked_room` (`room_user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE room
+ADD room_status_id INT UNSIGNED NOT NULL;
+
+ALTER TABLE room
+ADD CONSTRAINT `fk_status` FOREIGN KEY (`room_status_id`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE equipment
+ADD `equip_status_id` INT UNSIGNED NOT NULL;
+
+ALTER TABLE equipment
+ADD CONSTRAINT `fk_room_status_id` FOREIGN KEY (`equip_status_id`) REFERENCES `room` (`room_status_id`) ON DELETE CASCADE ON UPDATE CASCADE
