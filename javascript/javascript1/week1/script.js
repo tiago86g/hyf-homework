@@ -7,15 +7,17 @@ console.log(`You will be ${age} years old in ${yearFuture}`);
 /////////////// 2 - Goodboy-Oldboy (A dog age calculator)
 const dogYearOfBirth = 2014;
 const dogYearFuture = 2027;
-let dogYear = dogYearFuture - dogYearOfBirth;
+let dogFutureAge = dogYearFuture - dogYearOfBirth;
 let shouldShowResultInDogYears = true;
 
 if ((shouldShowResultInDogYears = true)) {
-  dogYear = dogYear * 7;
-  console.log(`Your dog will be ${dogYear} dog years old in ${dogYearFuture}`);
+  const dogFutureAge = dogYear * 7;
+  console.log(
+    `Your dog will be ${dogFutureAge} dog years old in ${dogYearFuture}`
+  );
 } else {
   console.log(
-    `Your dog will be ${dogYear} human years old in ${dogYearFuture}`
+    `Your dog will be ${dogFutureAge} human years old in ${dogYearFuture}`
   );
 }
 
