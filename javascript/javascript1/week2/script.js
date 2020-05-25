@@ -118,6 +118,7 @@ addStudentToClass('Vanessa Goncalves');
 addStudentToClass('Vera Lucia');
 addStudentToClass('Margareth II');
 addStudentToClass('Antonio Roberto');
+addStudentToClass('');
 getNumberOfStudents();
 console.log('Class 07', class07Students);
 
