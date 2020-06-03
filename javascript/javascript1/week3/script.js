@@ -83,3 +83,39 @@ function totalSeriesInLife(list) {
   });
 }
 totalSeriesInLife(seriesDurations);
+
+// 4. Smart-ease - Back to the basics!
+let notes = [];
+function saveNote(content, id) {
+  notes.push({ content: content, id: id });
+  console.log(notes);
+}
+saveNote('Pick up groceries', 1);
+saveNote('Do laundry', 2);
+
+function getNote(id) {
+  return notes.filter(item => item.id === id);
+}
+const firstNote = getNote(1);
+console.log('firstNote', firstNote);
+const secundNote = getNote(2);
+console.log('secundNote', firstNote);
+
+function logOutNotesFormatted() {
+  notes.map(item => {
+    id = item.id;
+    content = item.content;
+    console.log(
+      `The note with id:${id}, has the following note text: ${content}`
+    );
+  });
+}
+logOutNotesFormatted();
+
+function deleteNote(list, id) {
+  const updatedNotes = list.filter(note => note.id != id);
+  notes = updatedNotes;
+  return notes;
+}
+deleteNote(notes, 1);
+console.log('notes after delete one item', notes);
