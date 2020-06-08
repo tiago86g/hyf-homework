@@ -119,3 +119,61 @@ function deleteNote(list, id) {
 }
 deleteNote(notes, 1);
 console.log('notes after delete one item', notes);
+
+// 5. CactusIO-interactive (Smart phone usage app) optional
+const activities = [{ date: '6/7/2020', activity: 'Youtube', duration: 30 }];
+const totalActivities = activities.length;
+const time = [];
+const options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+};
+const today = new Date().toLocaleDateString('en-US');
+
+function addActivity(activity, duration) {
+  date = today;
+  for (let i = 0; i < activities.length; i++) {
+    time.push(activities[i].duration);
+  }
+  let totalTime = time.reduce((a, b) => a + b, 0);
+  if (totalTime > 360 || duration > 360) {
+    return console.log(
+      'You have reached your limit, no more smartphoning for you!'
+    );
+  } else {
+    activities.push({ date: date, activity: activity, duration: duration });
+    return;
+  }
+}
+addActivity('Youtube', 30);
+addActivity('Facebook', 390);
+addActivity('Instagram', 40);
+addActivity('Whatapp', 40);
+
+console.log(activities);
+
+function showStatus() {
+  if (activities.length > 0) {
+    const totalActivities = activities.length;
+    let totalTime = time.reduce((a, b) => a + b, 0);
+    console.log(
+      `You have added ${totalActivities} activities. They amount to ${totalTime} min. of usage. Your limit is 360 min`
+    );
+  } else {
+    console.log(`Add some activities before calling showStatus`);
+  }
+}
+showStatus();
+
+function showActivities(date) {
+  //date = today;
+  if (activities.length > 0) {
+    current = activities.filter(item => item.date == date);
+    console.log(current);
+  } else {
+    console.log("You don't have any activity");
+  }
+}
+showActivities(today);
