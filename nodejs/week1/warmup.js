@@ -9,7 +9,7 @@ class Circle {
     return (2 * Math.PI * this.radius).toFixed(1);
   }
   getArea() {
-    return (Math.PI * Math.pow(this.radius, 2)).toFixed(1);
+    return (Math.PI * this.radius * this.radius).toFixed(1);
   }
 }
 
