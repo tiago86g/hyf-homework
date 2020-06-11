@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 # Readme
+=======
+# Readme
+>>>>>>> master
