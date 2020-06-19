@@ -13,8 +13,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const reviewById = reviews.find(m => m.id === id);
-  if (id >= reviews.length || !id || isNaN(id)) {
-    res.send(`ID ${id} is not valid `);
+  const allIds = reviews.map(r => r.id);
+  if (!allIds.includes(id)) {
+    res.send(reviews);
   } else {
     delete reviewById.id;
     delete reviewById.mealId;

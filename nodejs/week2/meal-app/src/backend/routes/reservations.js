@@ -9,11 +9,12 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  if (id >= reservations.length || !id || isNaN(id)) {
+  const reservationById = reservations.find(r => r.id === id);
+  const allIds = reservations.map(r => r.id);
+  if (!allIds.includes(id)) {
     res.send(reservations);
   } else {
-    const specificReservation = reservations.find(r => r.id === id);
-    res.send(specificReservation);
+    res.send(reservationById);
   }
 });
 module.exports = router;
