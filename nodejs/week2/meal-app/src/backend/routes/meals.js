@@ -17,7 +17,6 @@ router.get('/:id', (req, res) => {
 
 router.get('/', (req, res) => {
   const { maxPrice, title, createdAfter, limit } = req.query;
-  const allTitles = meals.map(m => m.title);
 
   if (req.originalUrl === '/meals') {
     res.send(meals);
