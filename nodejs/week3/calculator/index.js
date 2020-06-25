@@ -14,28 +14,26 @@ app.get('/calculator', (req, res) => {
     numbers = Object.values(req.query);
     numbers.shift();
     numbers = numbers.map(Number);
-    console.log('query', numbers);
   } else if (req.body) {
     numbers = Object.values(req.body);
     numbers.shift();
     numbers = numbers.map(Number);
-    console.log('body', numbers);
   }
-  console.log('numbers final', numbers);
+
   if (method == 'addition') {
     result = numbers.reduce((acc, value) => acc + value, 0);
-    return res.send(`Result is ${result}`);
+    return res.json(result);
   } else if (method == 'multiplication') {
     result = numbers.reduce((acc, value) => acc * value, 1);
-    return res.send(`Result is ${result}`);
+    return res.json(result);
   } else if (method == 'subtration') {
     result = numbers.reduce((acc, value) => acc - value, 0);
-    return res.send(`Result is ${result}`);
+    return res.json(result);
   } else if (method == 'division') {
     result = numbers.reduce((acc, value) => acc / value, 1);
-    return res.send(`Result is ${result}`);
+    return res.json(result);
   } else
-    res.send(
+    console.error(
       `Try something like: calculator/?method=addition&first=1&second=2`
     );
 });
