@@ -26,7 +26,9 @@ router.post('/', async (req, res) => {
   res.send(newReview);
 });
 
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
+  console.log(req.params.id);
+
   const updatedReview = ({
     title,
     description,

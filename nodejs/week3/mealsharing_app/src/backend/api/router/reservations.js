@@ -15,26 +15,25 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
-
   const newReservation = ({
     number_of_guests,
     meal_id,
     created_date
   } = req.body);
   await knex('reservation').insert(newReservation);
-  res.send(reservations);
+  res.send(newReservation);
 });
 
 router.put('/:id', async (req, res) => {
+  const updatedReservation = ({
+    number_of_guests,
+    meal_id,
+    created_date
+  } = req.body);
   await knex('reservation')
     .where({ id: req.params.id })
-    .update({
-      number_of_guests,
-      meal_id,
-      created_date
-    });
-  res.send(req.params.id);
+    .update(updatedReservation);
+  res.send(updatedReservation);
 });
 
 router.delete('/:id', async (req, res) => {

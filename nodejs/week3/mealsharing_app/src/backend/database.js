@@ -14,7 +14,7 @@ const knex = require('knex')({
 });
 
 // Check that the connection works
-const date = new Date().toLocaleString('en-US', { hour12: false });
+const date = new Date().toLocaleString();
 knex.raw('SELECT VERSION()').then(() => {
   console.log(`database: >>${process.env.DB_NAME}<< connected at ${date}`);
 });
