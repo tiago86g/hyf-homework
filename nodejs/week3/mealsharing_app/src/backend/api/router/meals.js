@@ -25,6 +25,7 @@ router.post('/', async (req, res) => {
     created_date
   } = req.body);
   await knex('meal').insert(newMeal);
+
   const meals = await knex('meal');
   res.json(meals);
 });
