@@ -8,14 +8,14 @@ router.get('/', async (req, res) => {
       maxPrice,
       availableReservations,
       title,
-      createAfter,
+      createdAfter,
       limit
     } = req.query;
     if (
       !maxPrice &&
       !availableReservations &&
       !title &&
-      !createAfter &&
+      !createdAfter &&
       !limit
     ) {
       const meals = await knex('meal');
@@ -24,10 +24,7 @@ router.get('/', async (req, res) => {
       const meals = await knex('meal').where('price', '<', maxPrice);
       res.send(meals);
     } else if (title) {
-      const meals = await knex('meal')
-        .where('title', 'like', `%${title}%`)
-        .toSQL()
-        .toNative();
+      const meals = await knex('meal').where('title', 'like', `%${title}%`);
       res.send(meals);
     } else if (availableReservations == 'true') {
       meals = await knex('Meal')
@@ -42,28 +39,19 @@ router.get('/', async (req, res) => {
         .catch(e => {
           console.error(e);
         });
-      // meals = await knex.raw(
-      //   `
-      // SELECT Meal.id, Meal.title, Meal.max_reservations,
-      // SUM(reservation.number_of_guests) AS total_guests
-      // FROM Meal
-      // INNER JOIN Reservation ON Reservation.meal_id = Meal.id
-      // GROUP BY Meal.id
-      // HAVING total_guests < Meal.max_reservations`
-      // );
-      // meals = await knex('Meal')
-      //   .select('Meal.id', 'Meal.title', 'Meal.max_reservations')
-      //   .sum({ totalGuests: 'reservation.number_of_guests' })
-      //   .innerJoin('reservation', 'meal.id', 'reservation.meal_id')
-      //   .groupBy('Meal.id')
-      //   .having('totalGuests', '<', 'Meal.max_reservations')
-      //   .catch(e => {
-      //     console.error(e);
-      //   });
-      console.log('meals', meals);
+      res.send(meals);
+    } else if (createdAfter) {
+      const createdAfterDate = new Date(createdAfter);
+      const meals = await knex('meal').where(
+        'created_date',
+        '>',
+        createdAfterDate
+      );
+      res.send(meals);
+    } else if (limit) {
+      const meals = await knex('meal').limit(limit);
       res.send(meals);
     }
-    console.log(availableReservations);
   } catch (error) {}
 });
 
@@ -106,7 +94,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   await knex('meal')
-    .where('meal.id', parseInt(req.params.id))
+    .where('meal.id', req.params.id)
     .del();
   res.json(req.params.id);
 });
