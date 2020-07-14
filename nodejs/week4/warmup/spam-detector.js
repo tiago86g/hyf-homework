@@ -34,4 +34,4 @@ const emailFromOldFriend = new Email(
 );
 
 const spamDetector = new SpamDetector();
-console.log(spamDetector.isSpam(emailFromOldFriend)); // false
+console.log(spamDetector.isSpam(emailFromOldFriend));
