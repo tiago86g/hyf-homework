@@ -14,15 +14,11 @@ export class TodoItem extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (event.target.task.value === '') {
-      this.props.addTodo(this.state);
-      this.setState({
+      this.props.addTodo({
         task: 'Do nothing, just relax'
       });
     } else {
       this.props.addTodo(this.state);
-      this.setState({
-        task: ''
-      });
     }
   };
 
