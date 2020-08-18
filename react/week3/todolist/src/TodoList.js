@@ -15,7 +15,7 @@ export function TodoList(props) {
               fontWeight: 'bold'
             }}
             id={todo.id}>
-            {todo.task} >
+            {todo.description} >
           </span>
           <span
             style={{

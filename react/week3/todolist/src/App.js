@@ -6,24 +6,24 @@ import { TodoItem } from './TodoItem';
 export class App extends Component {
   state = {
     todosArray: [
-      {
-        id: 1,
-        task: 'Get out of bed',
-        deadline: '2020-08-20',
-        completed: false
-      },
-      {
-        id: 2,
-        task: 'Brush teeth',
-        deadline: '2020-08-20',
-        completed: false
-      },
-      {
-        id: 3,
-        task: 'Eat breakfast',
-        deadline: '2020-08-20',
-        completed: false
-      }
+      // {
+      //   id: 1,
+      //   task: 'Get out of bed',
+      //   deadline: '2020-08-20',
+      //   completed: false
+      // },
+      // {
+      //   id: 2,
+      //   task: 'Brush teeth',
+      //   deadline: '2020-08-20',
+      //   completed: false
+      // },
+      // {
+      //   id: 3,
+      //   task: 'Eat breakfast',
+      //   deadline: '2020-08-20',
+      //   completed: false
+      // }
     ]
   };
   editTodo = id => {};
@@ -52,6 +52,14 @@ export class App extends Component {
     todosArray.push(todo);
     this.setState({ todosArray });
   };
+
+  componentDidMount() {
+    fetch(
+      'https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw'
+    )
+      .then(response => response.json())
+      .then(data => this.setState({ todosArray: data }));
+  }
 
   render() {
     return (

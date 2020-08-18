@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class TodoItem extends Component {
   state = {
-    task: '',
+    description: '',
     deadline: ''
   };
 
@@ -14,10 +14,13 @@ export class TodoItem extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log('event.target.task.value :>> ', event.target.deadline.value);
-    if (event.target.task.value === '') {
+    console.log(
+      'event.target.description.value :>> ',
+      event.target.deadline.value
+    );
+    if (event.target.description.value === '') {
       this.props.addTodo({
-        task: 'Do nothing, just relax',
+        description: 'Do nothing, just relax',
         deadline: 'ramdom date'
       });
     } else {
@@ -30,7 +33,7 @@ export class TodoItem extends Component {
       <form onSubmit={this.handleSubmit}>
         <input
           type='text'
-          id='task'
+          id='description'
           placeholder='write your task here'
           onChange={this.handleChange}></input>
         <input type='date' id='deadline' onChange={this.handleChange}></input>
