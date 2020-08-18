@@ -25,14 +25,14 @@ export class App extends Component {
   };
 
   deleteTodo = id => {
-    let todosArray = this.state.todosArray.filter(todo => {
+    const todosArray = this.state.todosArray.filter(todo => {
       return todo.id !== id;
     });
     this.setState({ todosArray });
   };
 
   completeTodo = id => {
-    let todosArray = this.state.todosArray.map(todo => {
+    const todosArray = this.state.todosArray.map(todo => {
       if (todo.id === id) {
         return { ...todo, completed: !todo.completed };
       }
@@ -44,7 +44,7 @@ export class App extends Component {
 
   addTodo = todo => {
     todo.id = Math.random();
-    let todosArray = this.state.todosArray;
+    const todosArray = this.state.todosArray;
     todosArray.push(todo);
     this.setState({ todosArray });
     console.log(todo, todosArray);
