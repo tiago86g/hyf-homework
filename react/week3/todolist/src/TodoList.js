@@ -8,7 +8,13 @@ export function TodoList(props) {
   const mappedTodos = length ? (
     todosArray.map(todo => {
       return (
-        <div key={todo.id}>
+        <div
+          key={todo.id}
+          style={{
+            border: '1px solid black',
+            padding: '4px 4px',
+            marginBottom: '2px'
+          }}>
           <span
             style={{
               textDecorationLine: todo.completed ? 'line-through' : 'none',
@@ -28,7 +34,7 @@ export function TodoList(props) {
             type='checkbox'
             checked={todo.completed ? 'checked' : ''}
             onChange={() => completeTodo(todo.id)}></input>
-          <button onClick={() => deleteTodo(todo.id)}>Delete task</button>
+          <button onClick={() => deleteTodo(todo.id)}>delete task</button>
           <button onClick={() => editTodo(todo.id)}>edit</button>
         </div>
       );
