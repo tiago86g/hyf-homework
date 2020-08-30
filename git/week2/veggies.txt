@@ -1,6 +1,6 @@
 betroot
 carrot
-sweet potato
+cassava
 squash
 cucumber
 onion
