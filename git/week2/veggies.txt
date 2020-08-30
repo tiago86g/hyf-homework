@@ -1,5 +1,5 @@
 betroot
 carrot
-potato
+cassava
 squash
 cucumber
