@@ -1,5 +1,7 @@
 betroot
 carrot
-potato
+sweet potato
 squash
 cucumber
+onion
+garlic
