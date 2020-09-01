@@ -1,13 +1,11 @@
 import React from 'react';
+import SearchGitHub from "./components/SearchGitHub.jsx";
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <input type="text" placeholder="search for a GitHub user here"></input>
-      <button type="submit">search</button>
+        <SearchGitHub />
     </div>
   );
 }
-
-export default App;
