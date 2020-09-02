@@ -12,12 +12,19 @@ function SearchGitHub() {
     }
 
     useEffect(()=>{
-        if (user !== undefined){
-        fetch(`https://api.github.com/search/users?q=${user}`)
-        .then(res => res.json())
-        .then(result =>setNewUser(result))}
-        }, [user])
-        
+		if (!user) return;
+
+		const fetchData = async () => {
+			try {
+				const getUsers = await fetch(
+					`https://api.github.com/search/users?q=${user}`,
+				).then((response) => response.json());
+
+				setData(getUser.items);
+			} catch (e) {
+				console.log(e.message);
+			}
+		};
 
     return (
         <div>
