@@ -1,0 +1,7 @@
+betroot
+carrot
+cassava
+squash
+cucumber
+onion
+garlic
